@@ -52,4 +52,4 @@ huddle01_mcp = FastMCP(
 )
 
 # ASGI application instance for the Huddle01 MCP server
-app = huddle01_mcp.http_app()
+app = huddle01_mcp.http_app(path="/mcp", transport='streamable-http')
