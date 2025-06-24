@@ -1,15 +1,14 @@
 from typing import Any
 
 import httpx
-from fastmcp import FastMCP
 from app.mcp.client import huddle_client
 from starlette.requests import Request
 from starlette.responses import JSONResponse
+from .main import huddle01_mcp
 
-huddle01_mcp = FastMCP(
-    name="Huddle01_MCP",
-    version="0.1.0",
-)
+# ============================================
+# MCP Tools and Endpoints
+# ============================================
 
 @huddle01_mcp.custom_route("/healthz", methods=["GET"])
 async def health_check(_request: Request) -> JSONResponse:
